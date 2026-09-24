@@ -66,3 +66,6 @@ An internet connection is required when loading or refreshing a picture.
 - JavaScript and JSX
 - React Hooks (`useState` and `useEffect`)
 - Fetch API
+
+## Problem Statement
+![My Image](image.png)
