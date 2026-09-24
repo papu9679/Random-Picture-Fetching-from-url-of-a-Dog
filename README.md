@@ -1,16 +1,68 @@
-# React + Vite
+# Random Dog Picture Fetcher
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React application that displays a random dog picture using the [Dog CEO API](https://dog.ceo/dog-api/).
 
-Currently, two official plugins are available:
+The app fetches a picture automatically when it loads. Select **Fetch** to request another random picture. Loading and error messages are shown while the request is in progress or if it fails.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Requirements
 
-## React Compiler
+- Node.js 18 or newer
+- npm
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting started
 
-## Expanding the ESLint configuration
+1. Install the dependencies:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Open the local URL printed by Vite in your browser.
+
+## Available scripts
+
+| Command           | Description                                        |
+| ----------------- | -------------------------------------------------- |
+| `npm run dev`     | Start the Vite development server with hot reload. |
+| `npm run build`   | Create a production build in `dist`.               |
+| `npm run preview` | Preview the production build locally.              |
+| `npm run lint`    | Check the JavaScript and JSX files with ESLint.    |
+
+## How it works
+
+The main component uses React `useState` to track the image URL, loading state, and any error message. A `useEffect` call requests the first image after the component mounts. The **Fetch** button calls the same request function to load a new image.
+
+When the request succeeds, the image URL is read from the API response's `message` property and rendered in an `<img>` element. If the request fails, the error message is displayed instead.
+
+## API
+
+Random pictures are requested from:
+
+```text
+https://dog.ceo/api/breeds/image/random
+```
+
+The API returns JSON similar to:
+
+```json
+{
+	"message": "https://images.dog.ceo/breeds/...",
+	"status": "success"
+}
+```
+
+An internet connection is required when loading or refreshing a picture.
+
+## Tech stack
+
+- React
+- Vite
+- JavaScript and JSX
+- React Hooks (`useState` and `useEffect`)
+- Fetch API
