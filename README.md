@@ -1,7 +1,7 @@
 # Random Dog Picture Fetcher
 
 ## My project live link
-[click me](https://random-picture-fetching-from-url-of-kappa.vercel.app/)
+[click me](https://random-picture-fetching-from-url-of.vercel.app/)
 
 A small React application that displays a random dog picture using the [Dog CEO API](https://dog.ceo/dog-api/).
 
